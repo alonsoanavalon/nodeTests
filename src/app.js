@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
+const indexRoutes = require('./routes/index')
+
 
 
 
@@ -20,14 +22,7 @@ app.use(express.urlencoded({extended:true}))
 
 //Routes
 
-app.get('/', (req, res) => {
-    res.send('Hola')
-})
-
-app.post('/', (req, res) => {
-    console.log(req.body)
-})
-
+app.use('/', indexRoutes)
 
 //Listening...
 
