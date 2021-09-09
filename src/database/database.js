@@ -13,7 +13,7 @@ const mysqlConnection = mysql.createConnection({
     console.log(`Conectados a ${config.database.database}...`)
 }) */
 
-mysqlConnection.query("INSERT INTO productos (nombre, precio) VALUES ('galleta', 300)")
+
 
 
 module.exports = mysqlConnection;

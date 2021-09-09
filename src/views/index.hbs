@@ -1,0 +1,12 @@
+ <form action="/submodels" method="POST" id ="formModels">
+    <input list="model" name="model">
+    <datalist id="model">
+    {{#each resultados}}
+    <option value="{{nombre}}" data-id ="{{{id_producto}}}">
+    {{/each}}
+    </datalist>  
+    <input type="submit" value=">" id="btnModels">
+ </form>
+
+<script src="/js/main.js" type="module"></script>
+
