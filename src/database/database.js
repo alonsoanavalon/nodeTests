@@ -9,10 +9,10 @@ const mysqlConnection = mysql.createConnection({
 
 })
 
-/* mysqlConnection.connect( _=> {
-    console.log(`Conectados a ${config.database.database}...`)
-}) */
-
+mysqlConnection.connect(function(err) {
+        if (err) console.log(err)
+        console.log("Conectado a: ", config.database)
+  });
 
 
 

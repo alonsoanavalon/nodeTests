@@ -1,20 +1,35 @@
 const d = document;
-const $btnSubmit = d.querySelector('#formModels')
+const $btnSubmit = d.querySelector('#formBrand')
+const $indexForms = d.querySelector('.index-forms')
+const body = document.body
 export function getSubmodels () {
     
-    console.log($btnSubmit)
+
     d.addEventListener("submit", e => {
         e.preventDefault()
-        console.log(e.target)
+
         if (e.target == $btnSubmit) {
-            let url = `/submodels`
+            let url = `/brands`
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-            })
+                let newForm = d.createElement("form")
+                newForm.setAttribute("method", "POST")
+                newForm.setAttribute("action", "/year" )
 
-            alert("clicoazo")
+                body.appendChild(newForm)
+                let formDatalist = `<input list="submodel" name="submodel">
+                                    <datalist id="submodel">
+                                    `
+                data.forEach((n) => {
+                    let txt = `<option value=${n.nombre} data-id=${n.id_producto}></option>`
+                    formDatalist+= txt
+                })
+
+                newForm.insertAdjacentHTML("beforeend", formDatalist)
+                newForm.insertAdjacentHTML("beforeend", '<input type="submit" value=">>" id="btnSubmodels">')  
+                $indexForms.appendChild(newForm)
+            })
         }
     })
 
