@@ -2,6 +2,9 @@ const d = document;
 
 export function printYears () {
     var submodelsBox = document.getElementById("formSubmodels");
+    const $searchBtn = d.querySelector('#btnSearch')
+    
+
     submodelsBox.addEventListener("input", function(e){
 
         let $yearDatalist = d.createElement("datalist")

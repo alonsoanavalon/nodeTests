@@ -311,6 +311,16 @@ template {
 [hidden] {
   display: none; }
 
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem; }
+  .products .product {
+    border: 1px solid #ccc;
+    padding: 1rem; }
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;

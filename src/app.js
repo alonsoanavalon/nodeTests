@@ -10,9 +10,10 @@ const Handlebars = require('handlebars')
 const indexRoutes = require('./routes/index')
 const submodelRoutes = require('./routes/submodels')
 const yearRoutes = require('./routes/years')
-const brandRoutes = require('./routes/brands')
 const modelRoutes = require('./routes/models')
+const searchRoutes = require('./routes/search')
 const { model } = require('mongoose')
+
 
 
 const hbs = exphbs.create({
@@ -47,8 +48,8 @@ app.use(express.urlencoded({extended:true}))
 app.use('/', indexRoutes)
 app.use('/submodels', submodelRoutes)
 app.use('/years', yearRoutes)
-app.use('/brands', brandRoutes)
 app.use('/models', modelRoutes)
+app.use('/search', searchRoutes)
 //Listening...
 
 app.listen(app.get('port'), _ => {
